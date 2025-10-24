@@ -1,7 +1,11 @@
 {
     "cmake.configureOnOpen": true,
     "editor.formatOnSave": true,
-    "[cpp]": {
+    "[c]": {
         "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "files.associations": {
+        "glew.h": "c",
+        "glfw3.h": "c"
     }
 }

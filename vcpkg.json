@@ -4,6 +4,6 @@
   "dependencies": [
     "glfw3",
     "glew",
-    "glm"
+    "cglm"
   ]
 }
