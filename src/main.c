@@ -1,12 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include <GL/glew.h>
+#include <glad/glad.h>
 
 #include <GLFW/glfw3.h>
 #include <cglm/cglm.h>
-
-#include <point.h>
+#include <stb_image.h>
 
 static void error_callback(int error, const char *description)
 {
@@ -27,7 +26,6 @@ static void render(GLFWwindow *window)
 int main(void)
 {
     GLFWwindow *window;
-    vec3 point = {1.0, 1.0, 1.0};
 
     glfwSetErrorCallback(error_callback);
 
@@ -47,10 +45,13 @@ int main(void)
         exit(EXIT_FAILURE);
     }
 
-    glewExperimental = GL_TRUE;
-    glewInit();
-
     glfwMakeContextCurrent(window);
+
+    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+    {
+        fprintf(stderr, "Failed to initialize GLAD\n");
+        exit(EXIT_FAILURE);
+    }
 
     glfwSetKeyCallback(window, key_callback);
 
