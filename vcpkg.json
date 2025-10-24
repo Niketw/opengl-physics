@@ -4,7 +4,6 @@
   "dependencies": [
     "glfw3",
     "glew",
-    "glm",
-    "imgui"
+    "glm"
   ]
 }

@@ -8,18 +8,20 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(glfw3 REQUIRED)
 find_package(GLEW REQUIRED)
 find_package(glm REQUIRED)
-find_package(imgui REQUIRED)
 
 file(GLOB_RECURSE SOURCES "src/*.cpp")
 file(GLOB_RECURSE HEADERS "include/*.h")
 
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 
+target_include_directories(${PROJECT_NAME} PRIVATE 
+    "${PROJECT_SOURCE_DIR}/include"
+)
+
 target_link_libraries(${PROJECT_NAME} PRIVATE 
     glfw
     GLEW::glew
     glm::glm
-    imgui::imgui
 )
 
 if(EXISTS "${CMAKE_SOURCE_DIR}/assets")
