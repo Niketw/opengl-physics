@@ -1,10 +1,9 @@
 # OpenGL Physics Project
 
-This is a C++ project using OpenGL for graphics, with the following libraries:
+This is a C project using OpenGL for graphics, with the following libraries:
 - **GLFW** for window and input management.
 - **GLEW** for loading OpenGL extensions.
-- **GLM** for mathematics.
-- **ImGui** for creating in-application user interfaces.
+- **cglm** for mathematics.
 
 The project is configured to be built on Windows using Visual Studio 2022 and vcpkg for dependency management.
 
@@ -13,7 +12,7 @@ The project is configured to be built on Windows using Visual Studio 2022 and vc
 Before you begin, ensure you have the following installed:
 
 1.  **Visual Studio Code**: The editor used for this project. You can download it from the [official website](https://code.visualstudio.com/).
-2.  **Visual Studio 2022**: Make sure the **Desktop development with C++** workload is installed. This provides the required MSVC compiler and Windows SDK. You can get the Community version for free from the [Visual Studio website](https://visualstudio.microsoft.com/downloads/).
+2.  **Visual Studio 2022**: Make sure the **Desktop development with C** workload is installed. This provides the required MSVC compiler and Windows SDK. You can get the Community version for free from the [Visual Studio website](https://visualstudio.microsoft.com/downloads/).
 3.  **CMake**: Download and install the latest version from the [CMake website](https://cmake.org/download/). Make sure to select the option to add CMake to the system `PATH` for all users.
 4.  **Git**: Required for cloning vcpkg and this repository. You can get it from the [Git website](https://git-scm.com/downloads).
 
@@ -56,7 +55,7 @@ For CMake to automatically find and use vcpkg, you must set the `VCPKG_ROOT` env
 
 ### First-Time Configuration
 
-The first time you open the project, CMake needs to configure it. This will also trigger vcpkg to download and install the required libraries (`glfw3`, `glew`, `glm`, `imgui`). This may take some time.
+The first time you open the project, CMake needs to configure it. This will also trigger vcpkg to download and install the required libraries (`glfw3`, `glew`, `cglm`). This may take some time.
 
 1.  Open the Command Palette (`Ctrl+Shift+P`).
 2.  Type and select **CMake: Configure**.
@@ -76,6 +75,6 @@ You can monitor the progress in the **Output** panel in VS Code.
 
 To get the best experience when working with this project, it is highly recommended to install the following VS Code extensions:
 
--   [**C/C++ Extension Pack**](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack): This pack includes essential tools for C++ development in VS Code:
+-   [**C/C++ Extension Pack**](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack): This pack includes essential tools for C development in VS Code:
     -   **C/C++**: Provides IntelliSense, debugging, and code browsing.
     -   **CMake Tools**: Offers comprehensive support for configuring, building, and debugging CMake-based projects.
