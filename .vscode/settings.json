@@ -1,6 +1,6 @@
 {
     "cmake.configureOnOpen": true,
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "[c]": {
         "editor.defaultFormatter": "ms-vscode.cpptools"
     },
@@ -9,6 +9,7 @@
         "glfw3.h": "c",
         "keyboard_input.h": "c",
         "callbacks.h": "c",
-        "mouse_input.h": "c"
+        "mouse_input.h": "c",
+        "cmath": "c"
     }
 }
