@@ -3,6 +3,6 @@
 
 #include <GLFW/glfw3.h>
 
-void process_input(GLFWwindow *window);
+void check_exit_pressed(GLFWwindow *window);
 
 #endif // !KEYBOARD_INPUT_H

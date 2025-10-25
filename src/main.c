@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
     }
 
     // Create window and OpenGL context
-    GLFWwindow *window = glfwCreateWindow(800, 600, "My GLFW Window", NULL, NULL);
+    GLFWwindow *window = glfwCreateWindow(800, 600, "OpenGL Physics Simulation", NULL, NULL);
     if (!window)
     {
 
@@ -47,6 +47,7 @@ int main(int argc, char *argv[])
 
     glfwMakeContextCurrent(window);
 
+    // Load GLAD
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
     {
         perror("Error loading GLAD");
@@ -54,18 +55,19 @@ int main(int argc, char *argv[])
         exit(EXIT_FAILURE);
     }
 
+    // Callbacks
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+    glfwSetKeyCallback(window, key_callback);
 
-    // Mainloop
     while (!glfwWindowShouldClose(window))
     {
-        process_input(window);
+        // Checks if ESC key is pressed and closes window
+        check_exit_pressed(window);
 
         // Render commands
-        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+        glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
-        // Check, call events and swap buffers
         glfwSwapBuffers(window);
         glfwPollEvents();
     }

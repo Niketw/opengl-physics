@@ -7,7 +7,6 @@ set(CMAKE_C_STANDARD_REQUIRED ON)
 
 find_package(glfw3 REQUIRED)
 find_package(cglm REQUIRED)
-find_package(Stb REQUIRED)
 find_package(glad REQUIRED)
 
 file(GLOB_RECURSE SOURCES "src/*.c")
@@ -17,7 +16,6 @@ add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 
 target_include_directories(${PROJECT_NAME} PRIVATE 
     "${PROJECT_SOURCE_DIR}/include",
-    "${Stb_INCLUDE_DIR}"
 )
 
 target_link_libraries(${PROJECT_NAME} PRIVATE 
